@@ -1,0 +1,8 @@
+*.so
+*.o
+*.obj
+*.bin
+*.svg
+*.swp
+*.swo
+*.png

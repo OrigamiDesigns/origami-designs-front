@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+      html {
+	font-family: sans-serif;
+      }
+      .layout {
+	display: grid;
+	grid-template-areas:
+	  "header header header"
+	  "panel . products";
+	grid-template-columns: 1fr 0.25fr 5fr;
+      }
+      .header {
+	grid-area: header;
+	display: flex;
+	justify-content: center;
+      }
+      .panel {
+	grid-area: panel;
+      }
+      .results {
+	grid-area: products;
+	display: flex;
+	flex-flow: row wrap;
+	width: 512px;
+      }
+      .item {
+	margin: 8px;
+      }
+      .item img {
+	display: block;
+	width: 128px;
+      }
+    </style>
+    <title>Origami Designs</title>
+  </head>
+  <body>
+    <div class="layout">
+    <header class="header">
+      <h2>Logo Searchbar Cart</h2>
+    </header>
+    <div class="panel">
+      <aside>
+	<h3>Filters</h3>
+      </aside>
+    </div>
+    <div class="results">
+      <div class="item">
+	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
+	<p>
+	Knitted Baby Socks.
+	</p>
+      </div>
+      <div class="item">
+	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
+	<p>
+	Knitted Baby Pants.
+	</p>
+      </div>
+      <div class="item">
+	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
+	<p>
+	Knitted Baby Sweater.
+	</p>
+      </div>
+      <div class="item">
+	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
+	<p>
+	Knitted Baby Shirt.
+	</p>
+      </div>
+      <div class="item">
+	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
+	<p>
+	Knitted Baby Bonnet.
+	</p>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

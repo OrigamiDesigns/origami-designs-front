@@ -15,6 +15,7 @@
 	display: grid;
 	grid-template-areas:
 	  "header header header"
+	  "notice notice notice"
 	  "panel . products";
 	grid-template-columns: 1fr 0.25fr 5fr;
       }
@@ -45,6 +46,16 @@
 	height: var(--logo-height);
 	display: block;
       }
+      .notice {
+	grid-area: notice;
+      }
+      .notice h2 {
+	display: flex;
+	justify-content: center;
+      }
+      .origami {
+	color: purple;
+      }
       .panel {
 	grid-area: panel;
       }
@@ -73,6 +84,11 @@
       </div>
       <h2>Cart</h2>
     </header>
+    <div class="notice">
+      <h2>We are glad to see you here.</h2>
+      <h2 class="origami">Our page is currently under construction.</h2>
+      <h2>We hope to see you back soon.</h2>
+    </div>
     <div class="panel">
       <aside>
 	<h3>Filters</h3>

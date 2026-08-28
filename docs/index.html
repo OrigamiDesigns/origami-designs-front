@@ -10,6 +10,8 @@
       :root {
 	--logo-width: 80px;
 	--logo-height: var(--logo-width);
+	--item-img-width: 128px;
+	--item-img-height: var(--item-img-width);
       }
       .layout {
 	display: grid;
@@ -66,13 +68,40 @@
 	flex-flow: row wrap;
       }
       .item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	margin: 8px;
       }
       .item img {
 	display: block;
-	width: 128px;
+	width: var(--item-img-width);
+      }
+      /* NOTE: for now using same style as span for the button but that does not mean that the embedded text has the same size; nevertheless, the button will replace the span in a future commit and that means that we don't have to worry about making them the same size
+	 TODO: embed the item-image in a div container so that the listener code becomes less prone to error if more attributes are added to the image later on, probably because of the inline property of images
+       */
+      .item button, span {
+	display: flex;
+	justify-content: center;
+	width: var(--item-img-width);
+	background-color: purple;
+	border: 2px solid pink;
+	border-radius: 12px;
+	color: white;
       }
     </style>
+    <script type="module">
+    {
+      function onClickListener() {
+	const div = this.parentElement;
+	// NOTE: this is fragile but for now we are okay with this approach
+	const item = div.childNodes[3];
+	console.log(`clicked ${item.innerText}`);
+      }
+      const socksButton = document.getElementById("socks");
+      socksButton.addEventListener("click", onClickListener);
+    }
+    </script>
     <title>Origami Designs</title>
   </head>
   <body>
@@ -100,60 +129,110 @@
 	<p>
 	Knitted Baby Socks.
 	</p>
+	<button id="socks" type="button">
+	<strong>
+	Add to cart
+	</strong>
+	</button>
       </div>
       <div class="item">
 	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
 	<p>
 	Knitted Baby Pants.
 	</p>
+	<span>
+	<strong>
+	Add to cart
+	</strong>
+	</span>
       </div>
       <div class="item">
 	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
 	<p>
 	Knitted Baby Sweater.
 	</p>
+	<span>
+	<strong>
+	Add to cart
+	</strong>
+	</span>
       </div>
       <div class="item">
 	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
 	<p>
 	Knitted Baby Shirt.
 	</p>
+	<span>
+	<strong>
+	Add to cart
+	</strong>
+	</span>
       </div>
       <div class="item">
 	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
 	<p>
 	Knitted Baby Bonnet.
 	</p>
+	<span>
+	<strong>
+	Add to cart
+	</strong>
+	</span>
       </div>
       <div class="item">
 	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
 	<p>
 	Placeholder Item.
 	</p>
+	<span>
+	<strong>
+	Add to cart
+	</strong>
+	</span>
       </div>
       <div class="item">
 	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
 	<p>
 	Placeholder Item.
 	</p>
+	<span>
+	<strong>
+	Add to cart
+	</strong>
+	</span>
       </div>
       <div class="item">
 	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
 	<p>
 	Placeholder Item.
 	</p>
+	<span>
+	<strong>
+	Add to cart
+	</strong>
+	</span>
       </div>
       <div class="item">
 	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
 	<p>
 	Placeholder Item.
 	</p>
+	<span>
+	<strong>
+	Add to cart
+	</strong>
+	</span>
       </div>
       <div class="item">
 	<img loading=eager src="public/favicons/favicon.png" alt="placeholder image (for now) that shows the Origami Designs logo: a cross made with purple color origami.">
 	<p>
 	Placeholder Item.
 	</p>
+	<span>
+	<strong>
+	Add to cart
+	</strong>
+	</span>
       </div>
     </div>
   </body>
